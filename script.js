@@ -128,21 +128,21 @@ function rand(max) {
           var ny = pos.y + modDir[direction].y;
   
           if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
-            //Check if the tile is already visited
+           
             if (!mazeMap[nx][ny].visited) {
-              //Carve through walls from this tile to next
+           
               mazeMap[pos.x][pos.y][direction] = true;
               mazeMap[nx][ny][modDir[direction].o] = true;
   
-              //Set Currentcell as next cells Prior visited
+          
               mazeMap[nx][ny].priorPos = pos;
-              //Update Cell position to newly visited location
+          
               pos = {
                 x: nx,
                 y: ny
               };
               cellsVisited++;
-              //Recursively call this method on the next tile
+           
               move = true;
               break;
             }
@@ -396,7 +396,7 @@ function rand(max) {
       moves++;
       switch (e.keyCode) {
         case 65:
-        case 37: // west
+        case 37: 
           if (cell.w == true) {
             removeSprite(cellCoords);
             cellCoords = {
@@ -407,7 +407,7 @@ function rand(max) {
           }
           break;
         case 87:
-        case 38: // north
+        case 38: 
           if (cell.n == true) {
             removeSprite(cellCoords);
             cellCoords = {
@@ -418,7 +418,7 @@ function rand(max) {
           }
           break;
         case 68:
-        case 39: // east
+          case 39:
           if (cell.e == true) {
             removeSprite(cellCoords);
             cellCoords = {
@@ -429,7 +429,7 @@ function rand(max) {
           }
           break;
         case 83:
-        case 40: // south
+        case 40: 
           if (cell.s == true) {
             removeSprite(cellCoords);
             cellCoords = {
@@ -512,7 +512,7 @@ function rand(max) {
       ctx.canvas.height = viewWidth - viewWidth / 100;
     }
   
-    //Load and edit sprites
+  
     var completeOne = false;
     var completeTwo = false;
     var isComplete = () => {
