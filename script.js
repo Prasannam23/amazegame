@@ -525,8 +525,7 @@ function rand(max) {
          }
     };
     sprite = new Image();
-    sprite.src =
-      "./rabbit.png" +
+    sprite.src ="./rabbit.png" +
       "?" +
       new Date().getTime();
     sprite.setAttribute("crossOrigin", " ");
